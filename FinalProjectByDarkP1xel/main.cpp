@@ -8589,6 +8589,7 @@ static auto __stdcall IDirect3DDevice9_Present_HOOK(IDirect3DDevice9 *pDeviceInt
 														pGui->bCustomProfile = false;
 														//pGui->updateProfile(pGui->wsProjectUserName, std::move(pMain->multiByteToWide(CP_UTF8, &pGui->vecProfiles[pGui->ui32SelectedProfile - 1][0])));
 														pGui->updateProfile(pGui->ui32SelectedProfile - 1);
+														__AutoLoad(1);
 														ImGui::CloseCurrentPopup();
 													}
 													if (ImGui::Button("\xEE\xB5\xA6 Нет", std::move(ImVec2{264.0F, 134.0F}))) {
