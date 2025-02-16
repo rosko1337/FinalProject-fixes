@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cUpgradePosnDesc.hpp"
+#include "include/SA/cUpgradePosnDesc.hpp"
 
 class cVehicleStructure final {
 	public:

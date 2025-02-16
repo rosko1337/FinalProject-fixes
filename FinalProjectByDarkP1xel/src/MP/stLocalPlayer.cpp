@@ -7,7 +7,7 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../MP/stLocalPlayer.hpp"
+#include "include/MP/stLocalPlayer.hpp"
 
 // .....
 /* R1 */

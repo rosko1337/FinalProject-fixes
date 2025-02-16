@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cAutomobile.hpp"
+#include "include/SA/cAutomobile.hpp"
 
 class cQuadBike final {
 	public:

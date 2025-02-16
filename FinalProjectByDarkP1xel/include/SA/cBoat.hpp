@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cVehicle.hpp"
+#include "include/SA/cVehicle.hpp"
 
 class cBoat final {
 	public:

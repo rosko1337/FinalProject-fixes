@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cList.hpp"
+#include "include/SA/cList.hpp"
 
 class cFx final {
 	public:

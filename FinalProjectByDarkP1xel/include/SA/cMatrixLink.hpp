@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cMatrix.hpp"
+#include "include/SA/cMatrix.hpp"
 
 class cMatrixLink final {
 	public:

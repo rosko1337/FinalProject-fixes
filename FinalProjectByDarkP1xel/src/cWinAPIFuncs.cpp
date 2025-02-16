@@ -7,7 +7,7 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../cWinAPIFuncs.hpp"
+#include "include/cWinAPIFuncs.hpp"
 
 //static const auto __loadDLL = [this](wchar_t* pName) -> const HMODULE {
 //	UNICODE_STRING usModuleFileName{};

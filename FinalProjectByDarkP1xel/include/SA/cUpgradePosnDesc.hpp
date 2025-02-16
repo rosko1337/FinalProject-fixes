@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../Vector/cVector4D.hpp"
+#include "include/Vector/cVector4D.hpp"
 
 class cUpgradePosnDesc final {
 	public:

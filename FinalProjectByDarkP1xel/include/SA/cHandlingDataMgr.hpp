@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cAutoHandlingData.hpp"
+#include "include/SA/cAutoHandlingData.hpp"
 
 class cHandlingDataMgr final {
 	public:

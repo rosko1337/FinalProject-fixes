@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cPhysical.hpp"
+#include "include/SA/cPhysical.hpp"
 
 class cVehicle final {
 	public:

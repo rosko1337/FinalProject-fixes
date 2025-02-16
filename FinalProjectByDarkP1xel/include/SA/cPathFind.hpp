@@ -12,9 +12,9 @@
 
 #pragma once
 
-#include "../Vector/cVector3D.hpp"
-#include "../SA/cNodeAddress.hpp"
-#include "../SA/cForbiddenArea.hpp"
+#include "include/Vector/cVector3D.hpp"
+#include "include/SA/cNodeAddress.hpp"
+#include "include/SA/cForbiddenArea.hpp"
 
 class cPathFind final {
 	public:

@@ -34,11 +34,11 @@
 #pragma intrinsic(_ReturnAddress)
 
 //#include <d3dx9core.h>
-#include "../DirectX9/d3dx9core.h"
+#include "DirectX9/d3dx9core.h"
 
-#include "../Vector/cVector4D.hpp"
-#include "../Vector/cCompressedVector2D.hpp"
-#include "../Vector/cCompressedVector3D.hpp"
+#include "include/Vector/cVector4D.hpp"
+#include "include/Vector/cCompressedVector2D.hpp"
+#include "include/Vector/cCompressedVector3D.hpp"
 
 #include "cLog.hpp"
 #include "cWinAPIFuncs.hpp"

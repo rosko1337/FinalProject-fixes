@@ -7,4 +7,4 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../SA/cPathNode.hpp"
+#include "include/SA/cPathNode.hpp"

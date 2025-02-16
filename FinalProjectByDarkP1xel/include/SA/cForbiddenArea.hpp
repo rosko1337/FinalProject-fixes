@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../Vector/cVector2D.hpp"
+#include "include/Vector/cVector2D.hpp"
 
 class cForbiddenArea final {
 	public:

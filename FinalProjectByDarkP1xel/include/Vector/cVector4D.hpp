@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../Vector/cVector3D.hpp"
+#include "include/Vector/cVector3D.hpp"
 
 class cVector4D final : public cVector3D {
 	public:

@@ -7,7 +7,7 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../MP/stPlayerPool.hpp"
+#include "include/MP/stPlayerPool.hpp"
 
 // .....
 /* R1 */

@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../cMP.hpp"
+#include "include/cMP.hpp"
 
 class cRakClientManager final {
 	public:

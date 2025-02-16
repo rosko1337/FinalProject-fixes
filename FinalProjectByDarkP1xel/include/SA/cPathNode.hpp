@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include "../Vector/cCompressedVector3D.hpp"
-#include "../SA/cNodeAddress.hpp"
+#include "include/Vector/cCompressedVector3D.hpp"
+#include "include/SA/cNodeAddress.hpp"
 
 class cPathNode final {
 	public:

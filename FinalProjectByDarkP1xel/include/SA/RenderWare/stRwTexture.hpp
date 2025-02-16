@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/RenderWare\stRwLLLink.hpp"
+#include "include/SA/RenderWare\stRwLLLink.hpp"
 
 struct stRwTexture final {
 	struct stRwRaster *pRwRaster{nullptr};

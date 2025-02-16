@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include "../SA/cAutomobile.hpp"
-#include "../SA/cColPoint.hpp"
+#include "include/SA/cAutomobile.hpp"
+#include "include/SA/cColPoint.hpp"
 
 class cTrailer final {
 	public:

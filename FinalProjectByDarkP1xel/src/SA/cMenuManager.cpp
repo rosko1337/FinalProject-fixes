@@ -7,7 +7,7 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../SA/cMenuManager.hpp"
+#include "include/SA/cMenuManager.hpp"
 
 auto cMenuManager::checkForMenuClosing(void) -> void {
 	reinterpret_cast<void(__thiscall *)(class cMenuManager *pThis)>(0x576B70)(this);

@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cPlaceable.hpp"
+#include "include/SA/cPlaceable.hpp"
 
 class cEntity final {
 	public:

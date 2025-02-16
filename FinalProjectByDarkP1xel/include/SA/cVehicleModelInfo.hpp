@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include "../SA/cClumpModelInfo.hpp"
-#include "../SA/cVehicleStructure.hpp"
+#include "include/SA/cClumpModelInfo.hpp"
+#include "include/SA/cVehicleStructure.hpp"
 
 class cVehicleModelInfo final {
 	public:

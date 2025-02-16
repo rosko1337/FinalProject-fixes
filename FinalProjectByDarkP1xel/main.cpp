@@ -11,8 +11,8 @@
 #define PROJECT_VERSION_A "1.0.8.9"
 #define PROJECT_VERSION_W L"1.0.8.9"
 
-#include "../cMain.hpp"
-#include "../cExportAPI.hpp"
+#include "include/cMain.hpp"
+#include "include/cExportAPI.hpp"
 
 //#pragma warning(push)
 //#pragma warning(disable:4740)	/* Разрешает оставлять объекты препятствующих глобальной оптимизации */
@@ -1566,7 +1566,6 @@ static auto __declspec(noinline) __declspec(naked) IDirect3DDevice9_Reset_HOOK(v
 		jmp pIDirect3DDevice9_Reset_JMP;
 	}
 }
-
 
 static void *pPresent_JMP{nullptr};
 using IDirect3DDevice9_Present_t = HRESULT(__stdcall *)(IDirect3DDevice9 *pDeviceInterface, const RECT *pSourceRect, const RECT *pDestRect, HWND hDestWindowOverride, const RGNDATA *pDirtyRegion);
@@ -10802,12 +10801,24 @@ static auto __cdecl HookEnterFunc_CALL_1(void) -> void {
 					pHook->installJMPHook(reinterpret_cast<void*>(0x53F1E0), &ClearKeyBoardHistory_HOOK, 0x5, reinterpret_cast<void**>(&pClearKeyBoardHistory_t), &pClearKeyBoardHistory_JMP);
 					pHook->installJMPHook(reinterpret_cast<void*>(0x63AEE0), &EnterCarAsDriverTimed_HOOK, 0x6, reinterpret_cast<void**>(&pEnterCarAsDriverTimed_t), &pEnterCarAsDriverTimed_JMP);
 					pHook->installJMPHook(reinterpret_cast<void*>(0x69F2B0), &AddBigMessage_HOOK, 0x6, reinterpret_cast<void**>(&pAddBigMessage_t), &pAddBigMessage_JMP);
+					
+					/* D3D9 Present Hook */
+					const auto RwD3D9GetCurrentD3DDevice = [](void) -> void*  { return ((void* (__cdecl*)(void))0x7F9D50)(); }; // plugin-sdk
+					const auto GetVMT = [](const void* self)		-> void** { return *(void***)(self); }; // plugin-sdk
+					const auto device_vmt = GetVMT(RwD3D9GetCurrentD3DDevice());
+						
+					//pHook->installJMPHook(device_vmt[16], &IDirect3DDevice9_Reset_HOOK, 0x7, nullptr, &(pIDirect3DDevice9_Reset_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x6FFF6));
+					pHook->installJMPHook(device_vmt[17], &IDirect3DDevice9_Present_HOOK, 0x6, reinterpret_cast<void**>(&pPresent_t), &pPresent_JMP);
+					//pHook->installJMPHook(device_vmt[82], &IDirect3DDevice9_DrawIndexedPrimitive_HOOK, 0x5, reinterpret_cast<void**>(&pDrawIndexedPrimitive_t), &pDrawIndexedPrimitive_JMP);
+
+					// rmdir "$(IntDirFullPath)" /s /q
+
 					/* MP Hooks */
 					switch (cMP::SAMPVer) {
 					case cMP::eVer::e037R1: {
 						/* D3D9 Hooks */
-						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x6FFEF), &IDirect3DDevice9_Reset_HOOK, 0x7, nullptr, &(pIDirect3DDevice9_Reset_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x6FFF6)));
-						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x71130), &IDirect3DDevice9_Present_HOOK, 0x6, reinterpret_cast<void**>(&pPresent_t), &pPresent_JMP);
+						//pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x6FFEF), &IDirect3DDevice9_Reset_HOOK, 0x7, nullptr, &(pIDirect3DDevice9_Reset_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x6FFF6)));
+						//pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x71130), &IDirect3DDevice9_Present_HOOK, 0x6, reinterpret_cast<void**>(&pPresent_t), &pPresent_JMP);
 						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x708A0), &IDirect3DDevice9_DrawIndexedPrimitive_HOOK, 0x5, reinterpret_cast<void**>(&pDrawIndexedPrimitive_t), &pDrawIndexedPrimitive_JMP);
 						/* RakNet Hooks */
 						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x37436), &iRPC_WithParams_HOOK, 0x7, nullptr, &(piRPC_WithParams_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x37443)));
@@ -10826,8 +10837,8 @@ static auto __cdecl HookEnterFunc_CALL_1(void) -> void {
 					}
 					case cMP::eVer::e037R3: {
 						/* D3D9 Hooks */
-						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x73EDF), &IDirect3DDevice9_Reset_HOOK, 0x7, nullptr, &(pIDirect3DDevice9_Reset_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x73EE6)));
-						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x75020), &IDirect3DDevice9_Present_HOOK, 0x6, reinterpret_cast<void**>(&pPresent_t), &pPresent_JMP);
+						//pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x73EDF), &IDirect3DDevice9_Reset_HOOK, 0x7, nullptr, &(pIDirect3DDevice9_Reset_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x73EE6)));
+						//pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x75020), &IDirect3DDevice9_Present_HOOK, 0x6, reinterpret_cast<void**>(&pPresent_t), &pPresent_JMP);
 						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x74790), &IDirect3DDevice9_DrawIndexedPrimitive_HOOK, 0x5, reinterpret_cast<void**>(&pDrawIndexedPrimitive_t), &pDrawIndexedPrimitive_JMP);
 						/* RakNet Hooks */
 						pHook->installJMPHook(reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x3A7E6), &iRPC_WithParams_HOOK, 0x7, nullptr, &(piRPC_WithParams_JMP = reinterpret_cast<void*>(cMP::ui32SAMPBase + 0x3A7F3)));

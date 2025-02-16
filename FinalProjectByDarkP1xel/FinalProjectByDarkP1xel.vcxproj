@@ -5,10 +5,6 @@
       <Configuration>WinMain</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="WinMain|x64">
-      <Configuration>WinMain</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8A554115-D9D7-49D6-A1B7-C78BCDFE4476}</ProjectGuid>
@@ -17,14 +13,6 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinMain|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-    <CLRSupport>false</CLRSupport>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinMain|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -34,22 +22,6 @@
     <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinMain|x64'">
-    <OutDir>$(MSBuildStartupDirectory)\bin\</OutDir>
-    <TargetExt>.ASI</TargetExt>
-    <LinkIncremental>false</LinkIncremental>
-    <GenerateManifest>false</GenerateManifest>
-    <LinkDelaySign>false</LinkDelaySign>
-    <EmbedManifest>false</EmbedManifest>
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
-    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <TargetName>FinalProjectByDarkP1xel64</TargetName>
-    <IncludePath>D:\Libraries\DirectX9\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Libraries\DirectX9\Lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinMain|Win32'">
     <TargetExt>.ASI</TargetExt>
     <LinkIncremental>false</LinkIncremental>
@@ -58,11 +30,11 @@
     <EmbedManifest>false</EmbedManifest>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <IncludePath>D:\Libraries\DirectX9\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Libraries\DirectX9\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
     <OutDir>$(MSBuildStartupDirectory)\bin\</OutDir>
     <TargetName>FinalProjectByDarkP1xel32</TargetName>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -71,116 +43,6 @@
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='WinMain|Win32'">
     <VcpkgUseStatic>true</VcpkgUseStatic>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinMain|x64'">
-    <ClCompile>
-      <Optimization>Full</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
-      <OmitFramePointers>true</OmitFramePointers>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
-      <FloatingPointModel>Precise</FloatingPointModel>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
-      <ControlFlowGuard>false</ControlFlowGuard>
-      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
-      <CreateHotpatchableImage>false</CreateHotpatchableImage>
-      <OpenMPSupport>false</OpenMPSupport>
-      <ExpandAttributedSource>false</ExpandAttributedSource>
-      <UseFullPaths>true</UseFullPaths>
-      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
-      <ShowIncludes>false</ShowIncludes>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <AssemblerOutput>NoListing</AssemblerOutput>
-      <SDLCheck>true</SDLCheck>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
-      <DebugInformationFormat>None</DebugInformationFormat>
-      <BrowseInformation>false</BrowseInformation>
-      <CompileAsManaged>false</CompileAsManaged>
-      <CompileAsWinRT>false</CompileAsWinRT>
-      <UseUnicodeForAssemblerListing>true</UseUnicodeForAssemblerListing>
-      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\;$(MSBuildProjectDirectory)\source\;D:\Libraries\MinHook\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CallingConvention>Cdecl</CallingConvention>
-      <DisableLanguageExtensions>false</DisableLanguageExtensions>
-      <SmallerTypeCheck>false</SmallerTypeCheck>
-      <FloatingPointExceptions>false</FloatingPointExceptions>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalUsingDirectories>
-      </AdditionalUsingDirectories>
-      <UndefinePreprocessorDefinitions>BUILD_DLL;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
-      <ErrorReporting>None</ErrorReporting>
-    </ClCompile>
-    <Link>
-      <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
-      <LinkStatus>false</LinkStatus>
-      <PreventDllBinding>false</PreventDllBinding>
-      <EnableUAC>true</EnableUAC>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <FullProgramDatabaseFile>false</FullProgramDatabaseFile>
-      <AssemblyDebug>false</AssemblyDebug>
-      <TerminalServerAware>false</TerminalServerAware>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>false</EnableCOMDATFolding>
-      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
-      <WindowsMetadataLinkDelaySign>false</WindowsMetadataLinkDelaySign>
-      <FixedBaseAddress>false</FixedBaseAddress>
-      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
-      <CLRUnmanagedCodeCheck>true</CLRUnmanagedCodeCheck>
-      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
-      <CLRSupportLastError>Disabled</CLRSupportLastError>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\;$(MSBuildProjectDirectory)\SRC;D:\Libraries\MinHook\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <SubSystem>Windows</SubSystem>
-      <DataExecutionPrevention>true</DataExecutionPrevention>
-      <AdditionalDependencies>D:\Libraries\MinHook\libMinHook-x64-v141-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SupportNobindOfDelayLoadedDLL>true</SupportNobindOfDelayLoadedDLL>
-      <GenerateMapFile>true</GenerateMapFile>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <AllowIsolation>true</AllowIsolation>
-      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <SetChecksum>true</SetChecksum>
-      <Version>5.3</Version>
-      <IgnoreEmbeddedIDL>true</IgnoreEmbeddedIDL>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
-      <CreateHotPatchableImage>Enabled</CreateHotPatchableImage>
-    </Link>
-    <Manifest>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
-    </Manifest>
-    <Manifest>
-      <VerboseOutput>false</VerboseOutput>
-      <SuppressDependencyElement>false</SuppressDependencyElement>
-      <GenerateCategoryTags>false</GenerateCategoryTags>
-    </Manifest>
-    <Xdcmake>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
-      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
-    </Xdcmake>
-    <Bscmake>
-      <SuppressStartupBanner>false</SuppressStartupBanner>
-      <PreserveSbr>false</PreserveSbr>
-    </Bscmake>
-    <CustomBuildStep />
-    <ProjectReference />
-    <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
-    </ProjectReference>
-    <CustomBuildStep>
-      <TreatOutputAsContent>false</TreatOutputAsContent>
-    </CustomBuildStep>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinMain|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
@@ -216,7 +78,7 @@
       <UseUnicodeForAssemblerListing>true</UseUnicodeForAssemblerListing>
       <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\;$(MSBuildProjectDirectory)\source\;D:\Libraries\MinHook\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\;$(MSBuildProjectDirectory)\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CallingConvention>Cdecl</CallingConvention>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -253,7 +115,7 @@
       <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
       <CLRSupportLastError>Disabled</CLRSupportLastError>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\;$(MSBuildProjectDirectory)\SRC;D:\Libraries\MinHook\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\;$(MSBuildProjectDirectory)\SRC;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -303,6 +165,10 @@
     <ResourceCompile>
       <SuppressStartupBanner>false</SuppressStartupBanner>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+copy /y "$(TargetPath)" "$(GTA_SA_DIR)\$(TargetFileName)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="include\ImGui\imgui.cpp" />
@@ -628,8 +494,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX9\d3dx9math.inl" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets" Condition="Exists('..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets'))" />
+  </Target>
 </Project>

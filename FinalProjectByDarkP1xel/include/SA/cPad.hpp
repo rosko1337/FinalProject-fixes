@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cControllerState.hpp"
+#include "include/SA/cControllerState.hpp"
 
 class cPad final {
 	public:

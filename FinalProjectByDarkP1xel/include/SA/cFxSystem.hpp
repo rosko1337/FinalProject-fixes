@@ -13,9 +13,9 @@
 #pragma once
 
 
-#include "../Vector/cVector3D.hpp"
-#include "../SA/cListItem.hpp"
-#include "../SA/RenderWare\stRwMatrix.hpp"
+#include "include/Vector/cVector3D.hpp"
+#include "include/SA/cListItem.hpp"
+#include "include/SA/RenderWare\stRwMatrix.hpp"
 
 class cFxSystem final {
 	public:

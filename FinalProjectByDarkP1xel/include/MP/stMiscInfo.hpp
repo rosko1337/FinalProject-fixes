@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../Vector/cVector3D.hpp"
+#include "include/Vector/cVector3D.hpp"
 
 struct stMiscInfo037R1 final {
 	struct stAudio *pAudio{nullptr};

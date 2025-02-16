@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../cWinAPIFuncs.hpp"
+#include "include/cWinAPIFuncs.hpp"
 
 class cDXLine final {
 	public:

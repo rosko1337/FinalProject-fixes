@@ -7,4 +7,4 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../SA/cControllerState.hpp"
+#include "include/SA/cControllerState.hpp"

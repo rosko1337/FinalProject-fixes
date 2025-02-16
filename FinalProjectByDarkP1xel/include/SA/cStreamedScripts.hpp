@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cStreamedScript.hpp"
+#include "include/SA/cStreamedScript.hpp"
 
 class cStreamedScripts final {
 	public:

@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/cEntity.hpp"
+#include "include/SA/cEntity.hpp"
 
 class cPhysical final {
 	public:

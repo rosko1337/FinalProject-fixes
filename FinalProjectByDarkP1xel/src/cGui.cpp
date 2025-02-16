@@ -7,7 +7,7 @@
 //  Copyright (C) 2021 BlastHack Team <BlastHack.Net>. All rights reserved.
 //
 
-#include "../cGui.hpp"
+#include "include/cGui.hpp"
 
 cGui::cGui(class cMain *pMain, class cWinAPIFuncs *pWinAPIFuncs, class cInternet *pInternet) {
 	if (!std::filesystem::exists("fproject.json"))

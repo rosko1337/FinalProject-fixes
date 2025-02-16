@@ -12,7 +12,7 @@
 
 #pragma once
 
-#include "../SA/RenderWare\stRwRGBAReal.hpp"
+#include "include/SA/RenderWare\stRwRGBAReal.hpp"
 
 class cFxPrtMult final {
 	public:
